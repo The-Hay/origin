@@ -10,10 +10,14 @@ import java.awt.*;
 public class GamePanel extends JPanel {
     // 背景图片(全局变量)
     private  Image bgImg;
+    //声明玩家对象
+    private Hero hero;
 
     public GamePanel() {
         //获取图片
         bgImg = ImgUtils.maps[0];
+        //创建玩家对象
+        hero = new Hero();
      }
 
      /**
@@ -26,6 +30,7 @@ public class GamePanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         //绘制背景图片
         g2d.drawImage(bgImg , 0 , 0 , Settings.Game_WIDTH, Settings.Game_HEIGHT, this);
-
+        //绘制玩家
+        hero.draw(g2d);
     }
 }

@@ -76,7 +76,7 @@ public abstract class Sprite {
 
 
     //绘制精灵元素
-    public void draw(Graphics g){
-        g.drawImage(img, x, y, w, h, null);
+    public void draw(Graphics2D g){
+        g.drawImage(img, x, y,  null);
     }
 }
