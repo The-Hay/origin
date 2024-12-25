@@ -28,6 +28,8 @@ public class GameWindow extends JFrame {
                 }
             }
         });
+        //将面板加入窗口中展示
+        add(new GamePanel());
     }
     public void startGame(){
         //显示窗口
