@@ -8,9 +8,24 @@ import java.awt.*;
  * 通常情况下，面板是要组装到窗体中使用，所以需要继承 JPanel
  */
 public class GamePanel extends JPanel {
+    // 背景图片(全局变量)
+    private  Image bgImg;
 
     public GamePanel() {
-        // 设置背景颜色
-        setBackground(Color.blue);
+        //获取图片
+        bgImg = ImgUtils.maps[0];
      }
+
+     /**
+      *绘制组件到面板中
+      */
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        //获取画笔对象（2d）
+        Graphics2D g2d = (Graphics2D) g;
+        //绘制背景图片
+        g2d.drawImage(bgImg , 0 , 0 , Settings.Game_WIDTH, Settings.Game_HEIGHT, this);
+
+    }
 }
